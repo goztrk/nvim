@@ -1,8 +1,6 @@
 local keymap = vim.keymap.set
 local silent = { silent = true }
 
-table.unpack = table.unpack or unpack -- 5.1 compatibility
-
 -- Better window movement
 keymap("n", "<C-h>", "<C-w>h", silent)
 keymap("n", "<C-j>", "<C-w>j", silent)
@@ -29,8 +27,8 @@ keymap("n", "<C-s>", ":w<CR>", silent)
 keymap("i", "<C-s>", "<ESC> :w<CR>", silent)
 
 -- Telescope
-keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>")
-keymap("n", "<S-p>", "<CMD>lua require('plugins.telescope.pickers.multi-rg')()<CR>")
+keymap("n", "<leader>ff", "<CMD>lua require('telescope.builtin').find_files()<CR>")
+-- keymap("n", "<S-p>", "<CMD>lua require('plugins.telescope.pickers.multi-rg')()<CR>")
 
 -- Remove highlights
 keymap("n", "<CR>", ":noh<CR><CR>", silent)
@@ -84,7 +82,7 @@ end
 -- LSP
 -- keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", silent) -- Replaced with Glance plugin
 -- keymap("n", "gr", "<cmd>lua vim.lsp.buf.references({ includeDeclaration = false })<CR>", silent) -- Replaced with Glance plugin
-keymap("n", "<C-Space>", "<cmd>lua vim.lsp.buf.code_action()<CR>", silent)
+-- keymap("n", "<C-Space>", "<cmd>lua vim.lsp.buf.code_action()<CR>", silent)
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", silent)
 keymap("v", "<leader>ca", "<cmd>'<,'>lua vim.lsp.buf.code_action()<CR>", silent)
 keymap("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", silent)
