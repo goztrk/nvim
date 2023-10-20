@@ -88,6 +88,10 @@ return {
     end,
   },
   {
+    "averms/black-nvim",
+    lazy = false,
+  },
+  {
     "gbprod/stay-in-place.nvim",
     lazy = false,
     config = true, -- run require("stay-in-place").setup()
